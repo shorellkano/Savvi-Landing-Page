@@ -1,3 +1,5 @@
+import { openWaitlistForm } from "@/lib/tally";
+
 const benefits = [
   "Works from primary school to NYSC and beyond",
   "Free to join – no hidden fees, ever",
@@ -58,11 +60,7 @@ export default function ForStudents() {
             </div>
 
             <button
-              onClick={() =>
-                document
-                  .querySelector("#waitlist")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={openWaitlistForm}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-bold text-lg hover:scale-105 hover:shadow-xl transition-all duration-300"
               style={{
                 background: "linear-gradient(135deg, #16a34a, #15803d)",

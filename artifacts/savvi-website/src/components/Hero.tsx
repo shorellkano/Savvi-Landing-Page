@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { openWaitlistForm } from "@/lib/tally";
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -7,10 +8,6 @@ export default function Hero() {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
-
-  const scrollToWaitlist = () => {
-    document.querySelector("#waitlist")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const scrollDown = () => {
     document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
@@ -41,7 +38,6 @@ export default function Hero() {
             transform: "translate(-30%, 30%)",
           }}
         />
-        {/* Floating dots */}
         {[
           { top: "20%", left: "8%", size: "w-3 h-3", color: "bg-yellow-400", delay: "0s" },
           { top: "60%", left: "5%", size: "w-4 h-4", color: "bg-green-400", delay: "1.2s" },
@@ -103,7 +99,7 @@ export default function Hero() {
               }`}
             >
               <button
-                onClick={scrollToWaitlist}
+                onClick={openWaitlistForm}
                 className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-white font-bold text-base shadow-xl animate-pulse-glow hover:scale-105 hover:shadow-blue-400/30 hover:shadow-2xl transition-all duration-300"
                 style={{ background: "linear-gradient(135deg, #2563EB, #7C3AED)" }}
               >
@@ -171,7 +167,6 @@ export default function Hero() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
             }`}
           >
-            {/* Main image container */}
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
               {/* Glow ring behind image */}
               <div
@@ -189,7 +184,6 @@ export default function Hero() {
                   className="w-full h-auto object-cover"
                   style={{ aspectRatio: "4/3" }}
                 />
-                {/* Subtle gradient overlay at bottom */}
                 <div
                   className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
                   style={{
@@ -198,7 +192,7 @@ export default function Hero() {
                 />
               </div>
 
-              {/* ── Floating card: Live badge ── */}
+              {/* Floating card: Live badge */}
               <div
                 className="absolute -top-4 -left-4 sm:-left-8 glass rounded-2xl px-4 py-2.5 shadow-xl flex items-center gap-2 animate-float"
                 style={{ animationDelay: "0.5s", animationDuration: "4s" }}
@@ -207,15 +201,13 @@ export default function Hero() {
                 <span className="text-xs font-bold text-gray-800">🎯 Pilot Live</span>
               </div>
 
-              {/* ── Floating card: Savings counter ── */}
+              {/* Floating card: Savings counter */}
               <div
                 className="absolute -bottom-4 -left-4 sm:-left-8 glass rounded-2xl px-4 py-3 shadow-xl animate-float"
                 style={{ animationDelay: "1s", animationDuration: "4.5s" }}
               >
                 <div className="text-xs text-gray-500 font-medium mb-0.5">Students Saving</div>
-                <div className="text-xl font-black gradient-text-green leading-tight">
-                  2,214+
-                </div>
+                <div className="text-xl font-black gradient-text-green leading-tight">2,214+</div>
                 <div className="flex mt-1 -space-x-1.5">
                   {["👩🏾", "👨🏿", "👩🏽", "👨🏾"].map((e, i) => (
                     <span key={i} className="text-base leading-none">{e}</span>
@@ -223,15 +215,13 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* ── Floating card: ID card sample ── */}
+              {/* Floating card: ID card sample */}
               <div
                 className="absolute -right-4 sm:-right-8 top-1/2 -translate-y-1/2 glass rounded-2xl px-4 py-3 shadow-xl w-40 animate-float"
                 style={{ animationDelay: "1.8s", animationDuration: "5.5s" }}
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-xs">
-                    👤
-                  </div>
+                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-xs">👤</div>
                   <div>
                     <div className="text-xs font-bold text-gray-800 leading-tight">John A.</div>
                     <div className="text-[10px] text-gray-500 leading-tight">UNILAG · 200L</div>
@@ -248,7 +238,7 @@ export default function Hero() {
                 <div className="mt-2 text-[9px] font-mono text-gray-400">SVV-2024-UL-001</div>
               </div>
 
-              {/* ── Floating card: Discount badge ── */}
+              {/* Floating card: Discount badge */}
               <div
                 className="absolute -bottom-3 right-8 sm:right-4 glass rounded-2xl px-3 py-2 shadow-xl animate-float"
                 style={{ animationDelay: "2.5s", animationDuration: "4s" }}

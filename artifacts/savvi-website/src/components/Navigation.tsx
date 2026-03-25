@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { openWaitlistForm } from "@/lib/tally";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -76,16 +77,15 @@ export default function Navigation() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a
-              href="#waitlist"
-              onClick={(e) => handleNavClick(e, "#waitlist")}
+            <button
+              onClick={openWaitlistForm}
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{
                 background: "linear-gradient(135deg, #2563EB, #7C3AED)",
               }}
             >
               Join Waitlist
-            </a>
+            </button>
           </div>
 
           {/* Mobile Hamburger */}
@@ -130,14 +130,13 @@ export default function Navigation() {
               {link.label}
             </a>
           ))}
-          <a
-            href="#waitlist"
-            onClick={(e) => handleNavClick(e, "#waitlist")}
+          <button
+            onClick={() => { setMenuOpen(false); openWaitlistForm(); }}
             className="block w-full text-center px-6 py-3 rounded-full text-sm font-semibold text-white"
             style={{ background: "linear-gradient(135deg, #2563EB, #7C3AED)" }}
           >
             Join Waitlist
-          </a>
+          </button>
         </div>
       </div>
     </nav>

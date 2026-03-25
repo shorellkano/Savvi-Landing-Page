@@ -1,3 +1,5 @@
+import { openWaitlistForm } from "@/lib/tally";
+
 export default function PilotProgram() {
   return (
     <section id="pilot" className="py-24 bg-gray-50">
@@ -51,12 +53,13 @@ export default function PilotProgram() {
                   </div>
                 </div>
 
-                <div
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm text-white"
+                <button
+                  onClick={openWaitlistForm}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm text-white hover:scale-105 hover:shadow-lg transition-all duration-300"
                   style={{ background: "linear-gradient(135deg, #2563EB, #7C3AED)" }}
                 >
-                  🚀 Coming to your campus soon
-                </div>
+                  🚀 Coming to your campus — Join the list
+                </button>
               </div>
 
               {/* Right side - Launch timeline */}
@@ -67,86 +70,90 @@ export default function PilotProgram() {
 
                 {[
                   {
-                    date: "Jan 2026",
+                    date: "January 2025",
                     event: "Savvi Founded",
                     done: true,
                     icon: "🌱",
-                  },
-                  {
-                    date: "Feb 2026",
-                    event: "UNILAG Pilot Begins",
-                    done: true,
-                    icon: "🏛️",
-                  },
-                  {
-                    date: "Mar 2026",
-                    event: "Covenant University Joins",
-                    done: true,
-                    icon: "🎓",
-                  },
-                  {
-                    date: "Official Campus Launch: March 2026",
-                    event: "Full Public Launch",
-                    done: true,
-                    icon: "🚀",
+                    note: "The idea is born in Lagos",
                   },
                   {
                     date: "Q2 2026",
+                    event: "UNILAG Pilot Begins",
+                    done: true,
+                    icon: "🏛️",
+                    note: "First students verified & onboarded",
+                  },
+                  {
+                    date: "Q2 2026",
+                    event: "Covenant University Joins",
+                    done: true,
+                    icon: "🎓",
+                    note: "Second campus goes live",
+                  },
+                  {
+                    date: "Later in 2026",
+                    event: "Full Public Launch",
+                    done: false,
+                    icon: "🚀",
+                    note: "Official campus-wide launch coming soon",
+                    highlight: true,
+                  },
+                  {
+                    date: "2026 & Beyond",
                     event: "10+ Campuses Nationwide",
                     done: false,
                     icon: "🇳🇬",
-                  },
-                  {
-                    date: "Q3 2026",
-                    event: "100+ Brand Partners",
-                    done: false,
-                    icon: "🤝",
+                    note: "Scaling across Nigeria",
                   },
                 ].map((item) => (
-                  <div key={item.event} className="flex items-start gap-4">
+                  <div key={item.event} className="flex items-start gap-4 group">
                     <div
-                      className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm ${
+                      className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-sm transition-transform group-hover:scale-110 ${
                         item.done
-                          ? "bg-green-600 text-white"
+                          ? "bg-green-600 text-white shadow-md shadow-green-200"
+                          : item.highlight
+                          ? "bg-gradient-to-br from-blue-500 to-purple-600 text-white shadow-md shadow-blue-200"
                           : "bg-gray-200 text-gray-400"
                       }`}
                     >
                       {item.done ? (
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={3}
-                            d="M5 13l4 4L19 7"
-                          />
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                         </svg>
                       ) : (
-                        <div className="w-2 h-2 rounded-full bg-gray-400" />
+                        <span className="text-base">{item.icon}</span>
                       )}
                     </div>
-                    <div className="flex-1 min-w-0">
+                    <div className="flex-1 min-w-0 pb-1">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-sm">{item.icon}</span>
+                        {item.done && <span className="text-sm">{item.icon}</span>}
                         <span
-                          className={`text-sm font-semibold ${
-                            item.done ? "text-gray-900" : "text-gray-400"
+                          className={`text-sm font-bold ${
+                            item.highlight
+                              ? "gradient-text-blue-purple"
+                              : item.done
+                              ? "text-gray-900"
+                              : "text-gray-500"
                           }`}
                         >
                           {item.event}
                         </span>
+                        {item.highlight && (
+                          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-700">
+                            UPCOMING
+                          </span>
+                        )}
                       </div>
                       <div
-                        className={`text-xs mt-0.5 ${
-                          item.done ? "text-green-600" : "text-gray-400"
-                        } font-medium`}
+                        className={`text-xs font-semibold mt-0.5 ${
+                          item.done ? "text-green-600" : item.highlight ? "text-blue-500" : "text-gray-400"
+                        }`}
                       >
                         {item.date}
                       </div>
+                      {item.note && (
+                        <div className="text-[11px] text-gray-400 mt-0.5">{item.note}</div>
+                      )}
                     </div>
                   </div>
                 ))}

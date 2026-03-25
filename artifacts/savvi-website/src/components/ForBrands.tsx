@@ -1,3 +1,5 @@
+import { openWaitlistForm } from "@/lib/tally";
+
 const features = [
   {
     icon: "🎯",
@@ -129,11 +131,7 @@ export default function ForBrands() {
         {/* CTA */}
         <div className="text-center reveal-on-scroll">
           <button
-            onClick={() =>
-              document
-                .querySelector("#waitlist")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={openWaitlistForm}
             className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-bold text-lg border-2 border-white text-white hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-105 group"
           >
             <span>Become a Partner Brand</span>
