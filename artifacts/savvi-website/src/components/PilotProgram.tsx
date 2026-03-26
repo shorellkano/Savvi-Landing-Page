@@ -46,10 +46,10 @@ export default function PilotProgram() {
 
                 <div className="flex flex-wrap gap-4 mb-8">
                   <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-green-200 text-sm font-medium text-gray-700">
-                    🏛️ UNILAG — Active
+                    🏛️ UNILAG - Active
                   </div>
                   <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-green-200 text-sm font-medium text-gray-700">
-                    🎓 Covenant University — Active
+                    🎓 Covenant University - Active
                   </div>
                 </div>
 
@@ -58,7 +58,7 @@ export default function PilotProgram() {
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm text-white hover:scale-105 hover:shadow-lg transition-all duration-300"
                   style={{ background: "linear-gradient(135deg, #2563EB, #7C3AED)" }}
                 >
-                  🚀 Coming to your campus — Join the list
+                  🚀 Coming to your campus - Join the list
                 </button>
               </div>
 

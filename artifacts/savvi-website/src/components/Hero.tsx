@@ -51,7 +51,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-12 lg:pt-0 lg:pb-0 min-h-screen flex items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28 pb-12 lg:pt-24 lg:pb-12 min-h-screen flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
 
           {/* ── LEFT COLUMN: Text Content ── */}
@@ -86,7 +86,7 @@ export default function Hero() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Nigeria's first lifelong student savings platform — from primary
+              Nigeria's first lifelong student savings platform - from primary
               school to NYSC.{" "}
               <span className="text-green-700 font-semibold">Save smart.</span>{" "}
               <span className="text-green-700 font-semibold">Live better.</span>

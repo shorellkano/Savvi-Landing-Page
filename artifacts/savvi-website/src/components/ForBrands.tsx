@@ -29,7 +29,7 @@ const features = [
     icon: "🤝",
     title: "Partnership Tiers",
     description:
-      "Flexible partnership models for brands of all sizes — from startups to enterprise companies.",
+      "Flexible partnership models for brands of all sizes - from startups to enterprise companies.",
   },
   {
     icon: "📱",
@@ -82,7 +82,7 @@ export default function ForBrands() {
           <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Connect with thousands of verified students across Nigerian
             universities. The student market is one of Nigeria's largest
-            untapped consumer segments — and Savvi is your direct access point.
+            untapped consumer segments - and Savvi is your direct access point.
           </p>
         </div>
 

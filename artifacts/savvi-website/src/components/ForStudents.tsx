@@ -32,7 +32,7 @@ export default function ForStudents() {
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Every feature of Savvi was designed with the Nigerian student
-              experience in mind — from secondary school to your first job.
+              experience in mind - from secondary school to your first job.
             </p>
 
             {/* Benefits list */}

@@ -44,7 +44,7 @@ export default function ValueProps() {
             Why <span className="gradient-text-green">Savvi?</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We built the platform Nigerian students have always needed — smart,
+            We built the platform Nigerian students have always needed - smart,
             simple, and built to last.
           </p>
         </div>
