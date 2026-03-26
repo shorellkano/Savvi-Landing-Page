@@ -150,7 +150,10 @@ export default function ForBrands() {
             </svg>
           </button>
           <p className="text-gray-500 text-sm mt-4">
-            Partnership inquiries: partners@savvi.ng
+            Partnership inquiries:{" "}
+            <a href="tel:+2348027244825" className="hover:text-gray-300 transition-colors">
+              +234 802 724 4825
+            </a>
           </p>
         </div>
       </div>
