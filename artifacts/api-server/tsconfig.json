@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,  // ← Add or ensure this is true
-    "allowSyntheticDefaultImports": true,
-    // ... other settings
+    "esModuleInterop": true,  
+    "allowSyntheticDefaultImports": true
+  
   }
 }
   "include": ["src"],
