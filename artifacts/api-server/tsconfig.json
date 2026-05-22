@@ -1,10 +1,10 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src",
-    "types": ["node"]
-  },
+    "esModuleInterop": true,  // ← Add or ensure this is true
+    "allowSyntheticDefaultImports": true,  ← Optional but helpful
+    // ... other settings
+  }
+}
   "include": ["src"],
   "references": [
     {
